@@ -5,7 +5,7 @@ $(document).ready(function () {
         
         // alert(pos.top);
         var card_clicado = $(this).parents('.card').clone();
-        $(this).parents('.card').before(card_clicado);
+        var card = $(this).parents('.card').css('opacity', '0').before(card_clicado);
 
         //cardaren momentuko zaballuze eta posizioa jaso
         var ancho = card_clicado.width();
@@ -36,7 +36,11 @@ $(document).ready(function () {
                 $('#cantidad').text(parseInt($('#cantidad').text()) + 1);
             }).animate({
                 opacity: 1
-            }, 100);
+            }, 100, function(){
+                card.animate({
+                    opacity:1
+                },1000);
+            });
         });
         card_clicado.hide(1000);
     });
