@@ -27,16 +27,20 @@ $(document).ready(function () {
             width: 1,
             height: 1,
             borderRadius: 50
-        }, 1000,function() {
-            // Animation complete.
-            $('#cantidad').hide('slow', function(){
-                $('#cantidad').text(parseInt($('#cantidad').text())+1);
-            });
-            
-            $('#cantidad').show('slow');
-          });
-        card_clicado.hide('slow');
+        }, 1000);
+        card_clicado.hide(1000);
+        $('#cantidad').animate({
+            opacity: 0
+        }, 1000, function () {
+            $('#cantidad').text(parseInt($('#cantidad').text()) + 1);
+        }).animate({
+            opacity: 1
+        }, 200);
+
+       
+
         
+
 
     });
 });
