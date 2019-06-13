@@ -29,7 +29,7 @@ $(document).ready(function () {
             width: 1,
             height: 1,
             borderRadius: 50
-        }, 1000, function(){
+        }, 1000,"easeInOutBack", function(){
             $('#cantidad').animate({
                 opacity: 0
             }, 200, function () {
