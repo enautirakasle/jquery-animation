@@ -27,15 +27,17 @@ $(document).ready(function () {
             width: 1,
             height: 1,
             borderRadius: 50
-        }, 1000);
+        }, 1000, function(){
+            $('#cantidad').animate({
+                opacity: 0
+            }, 200, function () {
+                $('#cantidad').text(parseInt($('#cantidad').text()) + 1);
+            }).animate({
+                opacity: 1
+            }, 100);
+        });
         card_clicado.hide(1000);
-        $('#cantidad').animate({
-            opacity: 0
-        }, 1000, function () {
-            $('#cantidad').text(parseInt($('#cantidad').text()) + 1);
-        }).animate({
-            opacity: 1
-        }, 200);
+        
 
        
 
