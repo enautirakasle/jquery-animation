@@ -2,14 +2,15 @@
 $(document).ready(function () {
     $(".card a").click(function (event) {
         //var pos = $('#cantidad').position();
+        
         // alert(pos.top);
-        var card_clicado = $(this).parents('.card');
+        var card_clicado = $(this).parents('.card').clone();
+        $(this).parents('.card').before(card_clicado);
+
         //cardaren momentuko zaballuze eta posizioa jaso
         var ancho = card_clicado.width();
         var alto = card_clicado.height();
         var posicion_card = card_clicado.position();
-
-        //ezarri cardari
 
         //position fixed
         card_clicado.css('position', 'fixed');
@@ -17,6 +18,7 @@ $(document).ready(function () {
         card_clicado.height(alto);
         //z-index 100 jarri navaren aurretik joateko
 
+        //card_clicado.after(card_clicado.clone());
         //carrito botoiaren posizioa jaso
         var posicion_carrito = $('#cantidad').position();
 
@@ -37,12 +39,7 @@ $(document).ready(function () {
             }, 100);
         });
         card_clicado.hide(1000);
-        
-
-       
-
-        
-
-
     });
+
+
 });
